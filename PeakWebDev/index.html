@@ -6,11 +6,7 @@
   <title>PeakWebDev - Website Bisnis Profesional dalam Hitungan Jam</title>
   <meta name="description" content="Layanan pembuatan website profesional untuk UMKM, startup, dan bisnis kecil. Cepat, modern, dan terjangkau." />
   <meta name="author" content="PeakWebDev" />
- 
-  <meta name="description" content="Jasa pembuatan website cepat dan profesional untuk UMKM. PeakWebDev bantu bisnis kamu online dalam hitungan jam.">
-  <meta name="keywords" content="jasa pembuatan website, website UMKM, landing page, company profile, web murah">
-  <meta name="author" content="PeakWebDev">
-
+  
   <meta property="og:title" content="PeakWebDev - Website Bisnis Profesional" />
   <meta property="og:description" content="Website keren untuk bisnis Anda, jadi dalam 1-2 hari kerja." />
   <meta property="og:type" content="website" />
@@ -24,35 +20,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
-  <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css">
-  
-  <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
-  <script defer src="script.js"></script>
-  <script type="application/ld+json">{
-  "@context": "https://schema.org",
-  "@type": "LocalBusiness",
-  "name": "PeakWebDev",
-  "description": "Jasa pembuatan website cepat dan profesional untuk UMKM, startup, dan bisnis kecil.",
-  "url": "https://peakwebdev.netlify.app",
-  "logo": "https://peakwebdev.netlify.app/logo.png",
-  "contactPoint": {
-    "@type": "ContactPoint",
-    "telephone": "+62-831-5311-3448",
-    "contactType": "Customer Service"
-    }
-  }
-
-  <!-- Google Analytics -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
-  <script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-  gtag('config', 'G-XXXXXXXXXX');
-  </script>
-
-</script>
-
+  <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
 </head>
 
 <body>
@@ -109,7 +77,7 @@
     </section>
 
     <!-- Features Section -->
-    <section class="features-section" data-aos="fade-up">
+    <section class="features-section">
       <div class="container">
         <h2 class="section-title">Kenapa Pilih PeakWebDev?</h2>
         <div class="features-grid">
@@ -274,67 +242,99 @@
     </section>
 
     <!-- Portfolio Section -->
-    <section class="portfolio-section">
-      <div class="container">
-        <h2 class="section-title">Beberapa Website yang Pernah Kami Buat</h2>
-        <p class="section-subtitle">Lihat hasil karya kami untuk berbagai jenis bisnis</p>
-        <div class="portfolio-grid">
-          <div class="portfolio-card">
-            <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=600&h=400&fit=crop" alt="Toko Online Fashion" />
-            <div class="portfolio-content">
-              <h3 class="portfolio-title">Toko Online Fashion</h3>
-              <p class="portfolio-description">Website e-commerce lengkap dengan katalog produk dan integrasi marketplace</p>
-              <a href="#order-form" class="portfolio-link">Lihat Demo →</a>
+<section class="portfolio-section" id="portfolioSection">
+  <div class="container">
+    <h2 class="section-title" data-aos="fade-up">Beberapa Website yang Pernah Kami Buat</h2>
+    <p class="section-subtitle" data-aos="fade-up" data-aos-delay="100">
+      Lihat hasil karya kami untuk berbagai jenis bisnis
+    </p>
+
+    <div class="portfolio-carousel" aria-hidden="false">
+      <div class="portfolio-track" role="list">
+        <!-- Card template: duplicate / edit sesuai kebutuhan -->
+        <div class="portfolio-card" role="listitem">
+          <div class="portfolio-image">
+            <img src="assets\img\fashion.png" alt="Toko Online Fashion" loading="lazy">
+            <div class="portfolio-overlay">
+              <button class="portfolio-link" data-title="Toko Online Fashion" data-image="assets\img\fashion.png">Lihat Demo</button>
             </div>
           </div>
-          
-          <div class="portfolio-card">
-            <img src="https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?w=600&h=400&fit=crop" alt="Company Profile IT" />
-            <div class="portfolio-content">
-              <h3 class="portfolio-title">Company Profile IT</h3>
-              <p class="portfolio-description">Website profesional dengan portofolio dan sistem kontak terintegrasi</p>
-              <a href="#order-form" class="portfolio-link">Lihat Demo →</a>
+          <div class="portfolio-content">
+            <h3 class="portfolio-title">Toko Online Fashion</h3>
+            <p class="portfolio-description">Website e-commerce lengkap dengan katalog produk dan integrasi marketplace.</p>
+          </div>
+        </div>
+
+        <div class="portfolio-card" role="listitem">
+          <div class="portfolio-image">
+            <img src="assets\img\company profile.png" alt="Company Profile IT" loading="lazy">
+            <div class="portfolio-overlay">
+              <button class="portfolio-link" data-title="Company Profile IT" data-image="assets\img\company profile.png">Lihat Demo</button>
             </div>
           </div>
-          
-          <div class="portfolio-card">
-            <img src="https://images.unsplash.com/photo-1555396273-367ea4eb4db5?w=600&h=400&fit=crop" alt="Website Kafe & Restoran" />
-            <div class="portfolio-content">
-              <h3 class="portfolio-title">Website Kafe & Restoran</h3>
-              <p class="portfolio-description">Landing page menarik dengan menu digital dan tombol reservasi WhatsApp</p>
-              <a href="#order-form" class="portfolio-link">Lihat Demo →</a>
+          <div class="portfolio-content">
+            <h3 class="portfolio-title">Company Profile IT</h3>
+            <p class="portfolio-description">Website profesional dengan portofolio dan sistem kontak terintegrasi.</p>
+          </div>
+        </div>
+
+        <div class="portfolio-card" role="listitem">
+          <div class="portfolio-image">
+            <img src="assets\img\food.png" alt="Website Kafe & Restoran" loading="lazy">
+            <div class="portfolio-overlay">
+              <button class="portfolio-link" data-title="Website Kafe & Restoran" data-image="assets\img\food.png">Lihat Demo</button>
             </div>
           </div>
-          
-          <div class="portfolio-card">
-            <img src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=600&h=400&fit=crop" alt="Landing Page Startup" />
-            <div class="portfolio-content">
-              <h3 class="portfolio-title">Landing Page Startup</h3>
-              <p class="portfolio-description">Desain modern dengan animasi halus dan form lead generation</p>
-              <a href="#order-form" class="portfolio-link">Lihat Demo →</a>
+          <div class="portfolio-content">
+            <h3 class="portfolio-title">Website Kafe & Restoran</h3>
+            <p class="portfolio-description">Landing page menarik dengan menu digital dan tombol reservasi WhatsApp.</p>
+          </div>
+        </div>
+
+        <div class="portfolio-card" role="listitem">
+          <div class="portfolio-image">
+            <img src="assets\img\property.png" alt="Website Properti" loading="lazy">
+            <div class="portfolio-overlay">
+              <button class="portfolio-link" data-title="Website Properti" data-image="assets\img\property.png">Lihat Demo</button>
             </div>
           </div>
-          
-          <div class="portfolio-card">
-            <img src="https://images.unsplash.com/photo-1556740738-b6a63e27c4df?w=600&h=400&fit=crop" alt="Website Properti" />
-            <div class="portfolio-content">
-              <h3 class="portfolio-title">Website Properti</h3>
-              <p class="portfolio-description">Portal properti dengan galeri foto dan virtual tour terintegrasi</p>
-              <a href="#order-form" class="portfolio-link">Lihat Demo →</a>
+          <div class="portfolio-content">
+            <h3 class="portfolio-title">Website Properti</h3>
+            <p class="portfolio-description">Website properti modern dengan galeri foto interaktif dan fitur pemesanan cepat.</p>
+          </div>
+        </div>
+
+        <div class="portfolio-card" role="listitem">
+          <div class="portfolio-image">
+            <img src="assets\img\landing page.png" alt="Landing Page Startup" loading="lazy">
+            <div class="portfolio-overlay">
+              <button class="portfolio-link" data-title="Landing Page Startup" data-image="assets\img\landing page.png">Lihat Demo</button>
             </div>
           </div>
-          
-          <div class="portfolio-card">
-            <img src="https://images.unsplash.com/photo-1483058712412-4245e9b90334?w=600&h=400&fit=crop" alt="Website Pendidikan" />
-            <div class="portfolio-content">
-              <h3 class="portfolio-title">Website Pendidikan</h3>
-              <p class="portfolio-description">Platform kursus online dengan sistem pendaftaran dan jadwal kelas</p>
-              <a href="#order-form" class="portfolio-link">Lihat Demo →</a>
-            </div>
+          <div class="portfolio-content">
+            <h3 class="portfolio-title">Landing Page Startup</h3>
+            <p class="portfolio-description">Desain modern dengan CTA kuat dan animasi halus untuk menarik klien potensial.</p>
           </div>
         </div>
       </div>
-    </section>
+    </div>
+  </div>
+
+  <!-- Modal Preview -->
+  <div id="demoModal" class="demo-modal hidden" aria-hidden="true" role="dialog" aria-label="Preview Demo">
+    <div class="demo-overlay" data-close></div>
+    <div class="demo-content" role="document">
+      <button id="closeDemoModal" aria-label="Tutup preview">&times;</button>
+      <h3 id="demoTitle"></h3>
+      <img id="demoImage" src="" alt="Preview Demo">
+      <div style="text-align:center;margin-top:.5rem">
+        <button id="orderSimilar" class="btn btn-primary">Order Website Sejenis</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+
 
     <!-- Integration Section -->
     <section class="integration-section">
@@ -351,15 +351,21 @@
             <span class="integration-name">Shopee</span>
           </div>
           <div class="integration-item">
-            <img src="https://cdn.simpleicons.org/tokopedia" alt="Tokopedia" class="integration-icon" />
+            <svg class="integration-icon" viewBox="0 0 24 24" fill="#42B549" xmlns="http://www.w3.org/2000/svg">
+              <path d="M12.037 0C5.391 0 0 5.391 0 12.037c0 6.645 5.391 12.036 12.037 12.036 6.645 0 12.036-5.391 12.036-12.036C24.073 5.391 18.682 0 12.037 0zm0 21.818c-5.391 0-9.782-4.391-9.782-9.781 0-5.391 4.391-9.782 9.782-9.782 5.39 0 9.781 4.391 9.781 9.782 0 5.39-4.391 9.781-9.781 9.781zm6.645-9.781c0 3.682-2.964 6.645-6.645 6.645-3.682 0-6.646-2.963-6.646-6.645 0-3.682 2.964-6.646 6.646-6.646 3.681 0 6.645 2.964 6.645 6.646z"/>
+            </svg>
             <span class="integration-name">Tokopedia</span>
           </div>
           <div class="integration-item">
-            <img src="https://cdn.simpleicons.org/bukalapak" alt="Bukalapak" class="integration-icon" />
+            <svg class="integration-icon" viewBox="0 0 24 24" fill="#E31E52" xmlns="http://www.w3.org/2000/svg">
+              <path d="M10.973 18.537l-1.464-4.502h-5.02L3.025 18.537H0l4.502-13.074h3.467l4.502 13.074h-3.498zm-2.085-6.418l-1.765-5.42-1.765 5.42h3.53zm8.118 6.418V5.463h2.585v10.489h6.418v2.585H16.006z"/>
+            </svg>
             <span class="integration-name">Bukalapak</span>
           </div>
           <div class="integration-item">
-            <img src="https://cdn.simpleicons.org/lazada" alt="Lazada" class="integration-icon" />
+            <svg class="integration-icon" viewBox="0 0 24 24" fill="#0F1699" xmlns="http://www.w3.org/2000/svg">
+              <path d="M1.029 13.066l1.785-3.57h4.607l-1.785 3.57H1.029zm7.142-7.141L6.386 9.495h4.607l1.785-3.57H8.171zm7.142 0l-1.785 3.57h4.607l1.785-3.57h-4.607zm7.143 0l-1.785 3.57h4.607l1.785-3.57h-4.607zM15.313 13.066l-1.785 3.57h4.607l1.785-3.57h-4.607zm-7.142 0l-1.785 3.57h4.607l1.785-3.57H8.171z"/>
+            </svg>
             <span class="integration-name">Lazada</span>
           </div>
         </div>
@@ -369,101 +375,107 @@
     <!-- Testimonial Section -->
     <section class="testimonial-section">
       <div class="container">
-        <h2 class="section-title">Apa Kata Mereka?</h2>
-        <p class="section-subtitle">Testimoni dari klien yang puas dengan layanan kami</p>
-        <div class="testimonial-grid">
-          <div class="testimonial-card">
-            <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100&h=100&fit=crop" alt="Ahmad Santoso" class="testimonial-avatar" />
-            <div class="testimonial-stars">★★★★★</div>
-            <p class="testimonial-text">"Cepat banget! Website toko saya jadi cuma 2 hari."</p>
-            <p class="testimonial-name">Ahmad Santoso</p>
-            <p class="testimonial-role">Pemilik Toko Online</p>
-          </div>
-          
-          <div class="testimonial-card">
-            <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=100&h=100&fit=crop" alt="Siti Wulandari" class="testimonial-avatar" />
-            <div class="testimonial-stars">★★★★★</div>
-            <p class="testimonial-text">"Desain rapi dan langsung terhubung ke WhatsApp pelanggan."</p>
-            <p class="testimonial-name">Siti Wulandari</p>
-            <p class="testimonial-role">Owner Kafe</p>
-          </div>
-          
-          <div class="testimonial-card">
-            <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=100&h=100&fit=crop" alt="Rizky Hartanto" class="testimonial-avatar" />
-            <div class="testimonial-stars">★★★★★</div>
-            <p class="testimonial-text">"Harga segini untuk hasil profesional? Worth it banget."</p>
-            <p class="testimonial-name">Rizky Hartanto</p>
-            <p class="testimonial-role">Founder Startup</p>
-          </div>
-        </div>
+      <h2 class="section-title" data-aos="fade-up">Apa Kata Mereka?</h2>
+      <p class="section-subtitle" data-aos="fade-up" data-aos-delay="100">
+      Testimoni dari klien yang puas dengan layanan kami
+      </p>
+
+      <div class="testimonial-grid">
+      <div class="testimonial-card" data-aos="fade-up" data-aos-delay="200">
+      <img src="https://images.unsplash.com/photo-1607746882042-944635dfe10e?w=200&h=200&fit=crop" alt="Smiling middle-aged man wearing a blue business shirt against a neutral background, conveying warmth and professionalism" class="testimonial-avatar" />
+      <div class="testimonial-stars">★★★★★</div>
+      <p class="testimonial-text">"Cepat banget! Website toko saya jadi cuma 2 hari."</p>
+      <p class="testimonial-name">Ahmad Santoso</p>
+      <p class="testimonial-role">Pemilik Toko Online</p>
+      </div>
+
+      <div class="testimonial-card" data-aos="fade-up" data-aos-delay="300">
+      <img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=200&h=200&fit=crop" alt="Young woman with long dark hair smiling warmly while seated and facing the camera, wearing casual clothing in a neutral light colored interior, approachable and friendly tone" class="testimonial-avatar" />
+      <div class="testimonial-stars">★★★★★</div>
+      <p class="testimonial-text">"Desain rapi dan langsung terhubung ke WhatsApp pelanggan."</p>
+      <p class="testimonial-name">Siti Wulandari</p>
+      <p class="testimonial-role">Owner Kafe</p>
+      </div>
+
+      <div class="testimonial-card" data-aos="fade-up" data-aos-delay="400">
+      <img src="https://images.unsplash.com/photo-1552058544-f2b08422138a?w=200&h=200&fit=crop" alt="Rizky Hartanto" class="testimonial-avatar" />
+      <div class="testimonial-stars">★★★★★</div>
+      <p class="testimonial-text">“Harga segini untuk hasil profesional? Worth it banget.”</p>
+      <p class="testimonial-name">Rizky Hartanto</p>
+      <p class="testimonial-role">Founder Startup</p>
+      </div>
+      </div>
       </div>
     </section>
 
+    
     <!-- FAQ Section -->
     <section class="faq-section">
       <div class="container faq-container">
-        <h2 class="section-title">Pertanyaan Umum</h2>
-        <p class="section-subtitle">Temukan jawaban untuk pertanyaan yang sering diajukan</p>
-        <div class="faq-list">
-          <div class="faq-item">
-            <button class="faq-question">
-              <span>Berapa lama proses pembuatan website?</span>
-              <svg class="faq-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <polyline points="6 9 12 15 18 9"></polyline>
-              </svg>
-            </button>
-            <div class="faq-answer">
-              <p>Proses pembuatan website kami biasanya memakan waktu 1–2 hari kerja, tergantung kompleksitas paket yang dipilih.</p>
-            </div>
-          </div>
-          
-          <div class="faq-item">
-            <button class="faq-question">
-              <span>Apakah saya dapat revisi desain?</span>
-              <svg class="faq-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <polyline points="6 9 12 15 18 9"></polyline>
-              </svg>
-            </button>
-            <div class="faq-answer">
-              <p>Ya, kami menyediakan 1x revisi ringan gratis untuk memastikan website sesuai dengan keinginan Anda.</p>
-            </div>
-          </div>
-          
-          <div class="faq-item">
-            <button class="faq-question">
-              <span>Apakah harga sudah termasuk domain & hosting?</span>
-              <svg class="faq-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <polyline points="6 9 12 15 18 9"></polyline>
-              </svg>
-            </button>
-            <div class="faq-answer">
-              <p>Ya, semua paket sudah termasuk domain dan hosting gratis untuk 1 tahun pertama.</p>
-            </div>
-          </div>
-          
-          <div class="faq-item">
-            <button class="faq-question">
-              <span>Apakah bisa saya kelola sendiri setelah jadi?</span>
-              <svg class="faq-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <polyline points="6 9 12 15 18 9"></polyline>
-              </svg>
-            </button>
-            <div class="faq-answer">
-              <p>Tentu! Kami akan memberikan panduan singkat cara mengelola dan update konten website Anda.</p>
-            </div>
-          </div>
-          
-          <div class="faq-item">
-            <button class="faq-question">
-              <span>Apakah bisa diintegrasikan ke marketplace atau WhatsApp?</span>
-              <svg class="faq-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <polyline points="6 9 12 15 18 9"></polyline>
-              </svg>
-            </button>
-            <div class="faq-answer">
-              <p>Bisa! Integrasi marketplace (Shopee, Tokopedia, dll) dan WhatsApp tersedia tergantung paket yang Anda pilih.</p>
-            </div>
-          </div>
+      <h2 class="section-title">Pertanyaan Umum</h2>
+      <p class="section-subtitle">Temukan jawaban untuk pertanyaan yang sering diajukan</p>
+      <div class="faq-list">
+
+      <div class="faq-item">
+        <button class="faq-question">
+          <span>Berapa lama proses pembuatan website?</span>
+            <svg class="faq-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <polyline points="6 9 12 15 18 9"></polyline>
+            </svg>
+        </button>
+      <div class="faq-answer">
+      <p>Proses pembuatan website kami biasanya memakan waktu 1–2 hari kerja, tergantung kompleksitas paket yang dipilih.</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">
+          <span>Apakah saya dapat revisi desain?</span>
+            <svg class="faq-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <polyline points="6 9 12 15 18 9"></polyline>
+            </svg>
+        </button>
+      <div class="faq-answer">
+      <p>Ya, kami menyediakan 1x revisi ringan gratis untuk memastikan website sesuai dengan keinginan Anda.</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">
+          <span>Apakah harga sudah termasuk domain & hosting?</span>
+            <svg class="faq-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <polyline points="6 9 12 15 18 9"></polyline>
+            </svg>
+        </button>
+      <div class="faq-answer">
+      <p>Ya, semua paket sudah termasuk domain dan hosting gratis untuk 1 tahun pertama.</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">
+          <span>Apakah bisa saya kelola sendiri setelah jadi?</span>
+            <svg class="faq-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <polyline points="6 9 12 15 18 9"></polyline>
+            </svg>
+        </button>
+      <div class="faq-answer">
+      <p>Tentu! Kami akan memberikan panduan singkat cara mengelola dan update konten website Anda.</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question">
+          <span>Apakah bisa diintegrasikan ke marketplace atau WhatsApp?</span>
+            <svg class="faq-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <polyline points="6 9 12 15 18 9"></polyline>
+            </svg>
+        </button>
+      <div class="faq-answer">
+      <p>Bisa! Integrasi marketplace (Shopee, Tokopedia, dll) dan WhatsApp tersedia tergantung paket yang Anda pilih.</p>
+        </div>
+      </div>
+
         </div>
       </div>
     </section>
@@ -473,16 +485,16 @@
       <div class="container">
         <h2 class="section-title">Mulai Pembuatan Website Anda</h2>
         <p class="section-subtitle">Isi form di bawah dan tim kami akan segera menghubungi Anda</p>
-        <form class="order-form" id="orderForm">
+        <form class="order-form" id="orderForm" autocomplete="on">
           <div class="form-grid">
             <div class="form-group">
               <label for="businessName">Nama Bisnis *</label>
-              <input type="text" id="businessName" name="businessName" required />
+              <input type="text" id="businessName" name="businessName" required autocomplete="organization" />
             </div>
             
             <div class="form-group">
               <label for="websiteType">Jenis Website *</label>
-              <select id="websiteType" name="websiteType" required>
+              <select id="websiteType" name="websiteType" required autocomplete="website-type">
                 <option value="">Pilih jenis website</option>
                 <option value="landing-page">Landing Page</option>
                 <option value="company-profile">Company Profile</option>
@@ -493,28 +505,28 @@
             
             <div class="form-group">
               <label for="primaryColor">Warna Utama</label>
-              <input type="color" id="primaryColor" name="primaryColor" value="#1E3A8A" />
+              <input type="color" id="primaryColor" name="primaryColor" value="#1E3A8A" autocomplete="off" />
             </div>
             
             <div class="form-group">
               <label for="marketplaceLinks">Link Marketplace (opsional)</label>
-              <input type="text" id="marketplaceLinks" name="marketplaceLinks" placeholder="Shopee, Tokopedia, dll" />
+              <input type="text" id="marketplaceLinks" name="marketplaceLinks" placeholder="Shopee, Tokopedia, dll" autocomplete="url" />
             </div>
             
             <div class="form-group">
               <label for="whatsapp">Nomor WhatsApp *</label>
-              <input type="tel" id="whatsapp" name="whatsapp" placeholder="08123456789" required />
+              <input type="tel" id="whatsapp" name="whatsapp" placeholder="08123456789" required autocomplete="tel" />
             </div>
             
             <div class="form-group">
               <label for="email">Email *</label>
-              <input type="email" id="email" name="email" required />
+              <input type="email" id="email" name="email" required autocomplete="email" />
             </div>
           </div>
           
           <div class="form-group">
             <label for="package">Pilih Paket *</label>
-            <select id="package" name="package" required>
+            <select id="package" name="package" required autocomplete="transaction-amount">
               <option value="">Pilih paket</option>
               <option value="basic">Basic - Rp 1.200.000</option>
               <option value="pro">Pro - Rp 2.500.000</option>
@@ -522,7 +534,9 @@
             </select>
           </div>
           
-          <button type="submit" class="btn btn-primary btn-lg btn-full">Kirim & Mulai Pembuatan</button>
+          <button type="submit" class="btn btn-primary btn-lg btn-full" aria-label="Kirim pesanan dan mulai pembuatan website">
+            Kirim & Mulai Pembuatan
+          </button>
         </form>
         
         <div class="success-message hidden" id="successMessage">
@@ -561,113 +575,16 @@
     </div>
   </footer>
 
-  <script>
-    // Mobile menu toggle
-    const mobileMenuBtn = document.getElementById('mobileMenuBtn');
-    const mobileMenu = document.getElementById('mobileMenu');
-    const menuIcon = mobileMenuBtn.querySelector('.menu-icon');
-    const closeIcon = mobileMenuBtn.querySelector('.close-icon');
-
-    mobileMenuBtn.addEventListener('click', () => {
-      mobileMenu.classList.toggle('hidden');
-      menuIcon.classList.toggle('hidden');
-      closeIcon.classList.toggle('hidden');
-    });
-
-    // Close mobile menu when clicking links
-    document.querySelectorAll('.mobile-link, .mobile-menu .btn').forEach(link => {
-      link.addEventListener('click', () => {
-        mobileMenu.classList.add('hidden');
-        menuIcon.classList.remove('hidden');
-        closeIcon.classList.add('hidden');
-      });
-    });
-
-    // Smooth scrolling
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-      anchor.addEventListener('click', function (e) {
-        e.preventDefault();
-        const target = document.querySelector(this.getAttribute('href'));
-        if (target) {
-          target.scrollIntoView({ behavior: 'smooth', block: 'start' });
-        }
-      });
-    });
-
-    // FAQ accordion
-    document.querySelectorAll('.faq-question').forEach(button => {
-      button.addEventListener('click', () => {
-        const faqItem = button.parentElement;
-        const isOpen = faqItem.classList.contains('active');
-        
-        // Close all FAQ items
-        document.querySelectorAll('.faq-item').forEach(item => {
-          item.classList.remove('active');
-        });
-        
-        // Open clicked item if it wasn't open
-        if (!isOpen) {
-          faqItem.classList.add('active');
-        }
-      });
-    });
-
-    // Form submission
-    const orderForm = document.getElementById('orderForm');
-    const successMessage = document.getElementById('successMessage');
-
-    orderForm.addEventListener('submit', (e) => {
-      e.preventDefault();
-      
-      const formData = new FormData(orderForm);
-      const data = Object.fromEntries(formData.entries());
-      
-      // Create WhatsApp message
-      const message = `Halo PeakWebDev! Saya ingin order website:
-
-Nama Bisnis: ${data.businessName}
-Jenis Website: ${data.websiteType}
-Warna Utama: ${data.primaryColor}
-Link Marketplace: ${data.marketplaceLinks || '-'}
-WhatsApp: ${data.whatsapp}
-Email: ${data.email}
-Paket: ${data.package}
-
-Mohon hubungi saya untuk detail lebih lanjut. Terima kasih!`;
-
-      const whatsappUrl = `https://wa.me/6283153113448?text=${encodeURIComponent(message)}`;
-      
-      // Show success message
-      orderForm.classList.add('hidden');
-      successMessage.classList.remove('hidden');
-      
-      // Open WhatsApp
-      setTimeout(() => {
-        window.open(whatsappUrl, '_blank');
-      }, 1000);
-      
-      // Reset form after 3 seconds
-      setTimeout(() => {
-        orderForm.reset();
-        orderForm.classList.remove('hidden');
-        successMessage.classList.add('hidden');
-      }, 5000);
-    });
-  </script>
-  
-  <a href="https://wa.me/6283153113448" target="_blank" 
-   class="wa-float"
-   style="position: fixed; bottom: 20px; right: 20px;
-          background: #25D366; color: white; border-radius: 50%;
-          padding: 15px; font-size: 1.8rem;
-          box-shadow: 0 3px 10px rgba(0, 0, 0, 0.3);
-          z-index: 999; display: flex; align-items: center; justify-content: center;">
-    <i class="fa-brands fa-whatsapp"></i>
+  <!-- WhatsApp Floating Button -->
+  <a href="https://wa.me/6283153113448" target="_blank" class="wa-float" aria-label="Chat WhatsApp">
+    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="currentColor">
+      <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/>
+    </svg>
   </a>
-  
-  <script>
-    AOS.init({ duration: 800, once: true });
-  </script>
+
+  <!-- External Scripts Only -->
+  <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+  <script defer src="script.js"></script>
 
 </body>
 </html>
