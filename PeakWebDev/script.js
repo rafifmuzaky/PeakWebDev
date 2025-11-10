@@ -1,21 +1,90 @@
-// script.js
+// script.js - PeakWebDev Enhanced Version (Google Sheets + UX fixed)
 const FORM_SELECTOR = '#orderForm';
-const ENDPOINT = 'https://script.google.com/macros/s/AKfycbzwtOCh0TwbrX73QXmfg3t6c4oCxLZogbEf6J7n5jLMi2bL3zYVGmIE6pxlBhwmFuHc/exec'; // Ganti dengan URL dari Apps Script deployment
+const ENDPOINT = 'https://script.google.com/macros/s/AKfycbzga4PPCNVmWp6DxnLCMht_k3dVx00_SccEoOUBnuiJ_xKo7zRBXQxg3TZti0yVi-g9vA/exec';
 
 document.addEventListener('DOMContentLoaded', () => {
+  console.log('🚀 PeakWebDev initialized');
+  initMobileMenu();
+  initSmoothScroll();
+  initFAQ();
+  initFormHandler();
+  initAOS();
+});
+
+// --- Navbar ---
+function initMobileMenu() {
+  const btn = document.getElementById('mobileMenuBtn');
+  const menu = document.getElementById('mobileMenu');
+  if (!btn || !menu) return;
+
+  btn.addEventListener('click', () => {
+    menu.classList.toggle('hidden');
+    btn.querySelector('.menu-icon')?.classList.toggle('hidden');
+    btn.querySelector('.close-icon')?.classList.toggle('hidden');
+  });
+
+  menu.querySelectorAll('a').forEach(link =>
+    link.addEventListener('click', () => {
+      menu.classList.add('hidden');
+      btn.querySelector('.menu-icon')?.classList.remove('hidden');
+      btn.querySelector('.close-icon')?.classList.add('hidden');
+    })
+  );
+}
+
+// --- Smooth scroll ---
+function initSmoothScroll() {
+  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', e => {
+      const target = document.querySelector(anchor.getAttribute('href'));
+      if (target) {
+        e.preventDefault();
+        target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
+    });
+  });
+}
+
+// --- FAQ ---
+function initFAQ() {
+  document.querySelectorAll('.faq-question').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const item = btn.closest('.faq-item');
+      document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('active'));
+      item.classList.toggle('active');
+    });
+  });
+}
+
+// --- AOS animations ---
+function initAOS() {
+  if (typeof AOS !== 'undefined') {
+    AOS.init({ duration: 800, once: true, offset: 100 });
+  }
+}
+
+// --- FORM HANDLER ---
+function initFormHandler() {
   const form = document.querySelector(FORM_SELECTOR);
-  if (!form) return;
+  const successMessage = document.getElementById('successMessage');
+  if (!form) return console.error('Form tidak ditemukan.');
 
-  form.addEventListener('submit', async function (e) {
+  form.addEventListener('submit', async e => {
     e.preventDefault();
-    const btn = form.querySelector('button[type="submit"]');
-    if (btn) {
-      btn.disabled = true;
-      btn.textContent = 'Mengirim...';
-    }
 
-    const data = Object.fromEntries(new FormData(form).entries());
-    data.timestamp = new Date().toISOString();
+    const submitBtn = form.querySelector('button[type="submit"]');
+    submitBtn.disabled = true;
+    submitBtn.textContent = 'Mengirim...';
+
+    const formData = new FormData(form);
+    const data = Object.fromEntries(formData.entries());
+
+    if (!data.businessName || !data.whatsapp || !data.email || !data.package) {
+      showToast('Harap isi semua field wajib.', 'error');
+      submitBtn.disabled = false;
+      submitBtn.textContent = 'Kirim & Mulai Pembuatan';
+      return;
+    }
 
     try {
       const res = await fetch(ENDPOINT, {
@@ -24,23 +93,132 @@ document.addEventListener('DOMContentLoaded', () => {
         body: JSON.stringify(data)
       });
 
-      if (!res.ok) throw new Error(`Server returned ${res.status}`);
+      if (!res.ok) throw new Error(`Status: ${res.status}`);
 
       const result = await res.json();
       if (result.status === 'success') {
-        alert('Terima kasih! Pesan Anda berhasil dikirim. Kami akan segera menghubungi Anda via WhatsApp.');
-        form.reset();
-      } else {
-        throw new Error('Response tidak valid');
-      }
+        form.classList.add('hidden');
+        successMessage.classList.remove('hidden');
+        showToast('Data berhasil dikirim! Kami akan segera menghubungi Anda.', 'success');
+
+        // Open WhatsApp message
+        const waMsg = `
+Halo PeakWebDev! Saya ingin order website:
+- Nama Bisnis: ${data.businessName}
+- Jenis Website: ${data.websiteType}
+- Paket: ${data.package}
+- WhatsApp: ${data.whatsapp}
+- Email: ${data.email}`;
+        window.open(`https://wa.me/6283153113448?text=${encodeURIComponent(waMsg)}`, '_blank');
+      } else throw new Error(result.message || 'Gagal menyimpan data');
     } catch (err) {
-      console.error(err);
-      alert('Terjadi kesalahan saat mengirim. Silakan coba lagi.');
+      console.error('Error submit:', err);
+      showToast('Server tidak merespons, data dikirim via WhatsApp.', 'warning');
+      const waMsg = `
+Halo PeakWebDev! Saya ingin order website:
+- Nama Bisnis: ${data.businessName}
+- Jenis Website: ${data.websiteType}
+- Paket: ${data.package}
+- WhatsApp: ${data.whatsapp}
+- Email: ${data.email}`;
+      window.open(`https://wa.me/6283153113448?text=${encodeURIComponent(waMsg)}`, '_blank');
     } finally {
-      if (btn) {
-        btn.disabled = false;
-        btn.textContent = 'Kirim & Mulai Pembuatan';
-      }
+      submitBtn.disabled = false;
+      submitBtn.textContent = 'Kirim & Mulai Pembuatan';
     }
   });
+}
+
+// --- TOAST NOTIFICATION ---
+function showToast(message, type = 'info') {
+  const toast = document.createElement('div');
+  toast.className = `toast ${type}`;
+  toast.textContent = message;
+  document.body.appendChild(toast);
+  setTimeout(() => toast.classList.add('show'), 50);
+  setTimeout(() => {
+    toast.classList.remove('show');
+    setTimeout(() => toast.remove(), 300);
+  }, 4000);
+}
+
+// Add minimal CSS for toast notifications
+const style = document.createElement('style');
+style.textContent = `
+.toast {
+  position: fixed;
+  bottom: 30px;
+  left: 50%;
+  transform: translateX(-50%) translateY(100px);
+  background: #1E3A8A;
+  color: #fff;
+  padding: 14px 22px;
+  border-radius: 8px;
+  opacity: 0;
+  font-weight: 500;
+  transition: all .3s ease;
+  z-index: 9999;
+}
+.toast.show {
+  transform: translateX(-50%) translateY(0);
+  opacity: 1;
+}
+.toast.success { background: #16a34a; }
+.toast.error { background: #dc2626; }
+.toast.warning { background: #f59e0b; }
+`;
+document.head.appendChild(style);
+
+// === Portfolio Carousel Auto Scroll ===
+const track = document.querySelector('.portfolio-track');
+if (track) {
+  let offset = 0;
+  let autoScroll;
+
+  const scrollCarousel = () => {
+    offset -= 1.2;
+    if (Math.abs(offset) > track.scrollWidth / 2) offset = 0;
+    track.style.transform = `translateX(${offset}px)`;
+  };
+
+  const startCarousel = () => {
+    if (!autoScroll) autoScroll = setInterval(scrollCarousel, 50);
+  };
+  const stopCarousel = () => {
+    clearInterval(autoScroll);
+    autoScroll = null;
+  };
+
+  track.addEventListener('mouseenter', stopCarousel);
+  track.addEventListener('mouseleave', startCarousel);
+  startCarousel();
+}
+
+// === Modal Demo Preview ===
+const modal = document.getElementById('demoModal');
+const modalImg = document.getElementById('demoImage');
+const modalTitle = document.getElementById('demoTitle');
+const closeModal = document.getElementById('closeDemoModal');
+
+document.querySelectorAll('.portfolio-link').forEach(link => {
+  link.addEventListener('click', e => {
+    e.preventDefault();
+    const imgSrc = link.getAttribute('data-image');
+    const title = link.getAttribute('data-title');
+    modalImg.src = imgSrc;
+    modalTitle.textContent = title;
+    modal.classList.remove('hidden');
+    document.body.style.overflow = 'hidden';
+  });
 });
+
+[closeModal, modal].forEach(el =>
+  el.addEventListener('click', e => {
+    if (e.target === closeModal || e.target.classList.contains('demo-overlay')) {
+      modal.classList.add('hidden');
+      document.body.style.overflow = '';
+    }
+  })
+);
+
+
