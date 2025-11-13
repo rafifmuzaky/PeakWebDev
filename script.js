@@ -1,7 +1,8 @@
-// script.js - PeakWebDev Enhanced Version (Google Sheets + UX fixed)
+// script.js - PeakWebDev Cleaned & Optimized Version
 const FORM_SELECTOR = '#orderForm';
 const ENDPOINT = 'https://script.google.com/macros/s/AKfycbzga4PPCNVmWp6DxnLCMht_k3dVx00_SccEoOUBnuiJ_xKo7zRBXQxg3TZti0yVi-g9vA/exec';
 
+// === INIT ON PAGE LOAD ===
 document.addEventListener('DOMContentLoaded', () => {
   console.log('🚀 PeakWebDev initialized');
   initMobileMenu();
@@ -9,6 +10,13 @@ document.addEventListener('DOMContentLoaded', () => {
   initFAQ();
   initFormHandler();
   initAOS();
+});
+
+// === Navbar scroll effect ===
+window.addEventListener('scroll', () => {
+  const navbar = document.querySelector('.navbar');
+  if (window.scrollY > 20) navbar.classList.add('scrolled');
+  else navbar.classList.remove('scrolled');
 });
 
 // --- Navbar ---
@@ -32,7 +40,7 @@ function initMobileMenu() {
   );
 }
 
-// --- Smooth scroll ---
+// --- Smooth Scroll (Logo + Anchor Links) ---
 function initSmoothScroll() {
   document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', e => {
@@ -43,6 +51,16 @@ function initSmoothScroll() {
       }
     });
   });
+
+  // Scroll ke hero section jika klik logo
+  const logoLink = document.querySelector('.logo-link');
+  const heroSection = document.querySelector('#hero');
+  if (logoLink && heroSection) {
+    logoLink.addEventListener('click', e => {
+      e.preventDefault();
+      heroSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    });
+  }
 }
 
 // --- FAQ ---
@@ -56,10 +74,15 @@ function initFAQ() {
   });
 }
 
-// --- AOS animations ---
+// === Initialize AOS Animations ===
 function initAOS() {
   if (typeof AOS !== 'undefined') {
-    AOS.init({ duration: 800, once: true, offset: 100 });
+    AOS.init({
+      once: true,
+      duration: 1000,
+      offset: 100,
+      easing: 'ease-out-cubic',
+    });
   }
 }
 
@@ -87,10 +110,14 @@ function initFormHandler() {
     }
 
     try {
+      const formData = new FormData();
+      Object.keys(data).forEach(key => {
+        formData.append(key, data[key]);
+      });
+
       const res = await fetch(ENDPOINT, {
         method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(data)
+        body: formData
       });
 
       if (!res.ok) throw new Error(`Status: ${res.status}`);
@@ -101,7 +128,6 @@ function initFormHandler() {
         successMessage.classList.remove('hidden');
         showToast('Data berhasil dikirim! Kami akan segera menghubungi Anda.', 'success');
 
-        // Open WhatsApp message
         const waMsg = `
 Halo PeakWebDev! Saya ingin order website:
 - Nama Bisnis: ${data.businessName}
@@ -142,7 +168,7 @@ function showToast(message, type = 'info') {
   }, 4000);
 }
 
-// Add minimal CSS for toast notifications
+// Minimal CSS for toast
 const style = document.createElement('style');
 style.textContent = `
 .toast {
@@ -220,5 +246,3 @@ document.querySelectorAll('.portfolio-link').forEach(link => {
     }
   })
 );
-
-
