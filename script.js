@@ -1,6 +1,6 @@
 // script.js - PeakWebDev Cleaned & Optimized Version
 const FORM_SELECTOR = '#orderForm';
-const ENDPOINT = 'https://script.google.com/macros/s/AKfycbzga4PPCNVmWp6DxnLCMht_k3dVx00_SccEoOUBnuiJ_xKo7zRBXQxg3TZti0yVi-g9vA/exec';
+const ENDPOINT = 'https://script.google.com/macros/s/AKfycbyvxMqAbqoKnf6Ai5tWAtFfpA-rFW_navh3FLgl_e8ee5iuEOJyeZeUmayRO3gu1YDWcg/exec';
 
 // === INIT ON PAGE LOAD ===
 document.addEventListener('DOMContentLoaded', () => {
@@ -110,15 +110,14 @@ function initFormHandler() {
     }
 
     try {
-      const formData = new FormData();
-      Object.keys(data).forEach(key => {
-        formData.append(key, data[key]);
-      });
+      const formDataToSend = new FormData();
+      Object.keys(data).forEach(key => formDataToSend.append(key, data[key]));
 
       const res = await fetch(ENDPOINT, {
-        method: 'POST',
-        body: formData
+        method: "POST",
+        body: formDataToSend
       });
+
 
       if (!res.ok) throw new Error(`Status: ${res.status}`);
 
