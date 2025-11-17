@@ -78,7 +78,7 @@ function initFAQ() {
 function initAOS() {
   if (typeof AOS !== 'undefined') {
     AOS.init({
-      once: true,
+      once: false,
       duration: 1000,
       offset: 100,
       easing: 'ease-out-cubic',

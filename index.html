@@ -3,10 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>PeakWebDev - Website Bisnis Profesional dalam Hitungan Jam</title>
-  <meta name="description" content="Layanan pembuatan website profesional untuk UMKM, startup, dan bisnis kecil. Cepat, modern, dan terjangkau." />
-  <meta name="author" content="PeakWebDev" />
-  
+  <title>Jasa Pembuatan Website Profesional untuk UMKM & Startup - PeakWebDev</title>
+  <meta name="google-site-verification" content="XMv9wjB7zKQ2PZK9Wb_LOFtDNifq2O0AuKtTusZBtTw"/>
   <meta property="og:title" content="PeakWebDev - Website Bisnis Profesional" />
   <meta property="og:description" content="Website keren untuk bisnis Anda, jadi dalam 1-2 hari kerja." />
   <meta property="og:type" content="website" />
@@ -15,58 +13,89 @@
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:site" content="@PeakWebDev" />
   <meta name="twitter:image" content="https://lovable.dev/opengraph-image-p98pqg.png" />
+
+  <meta name="description" content="PeakWebDev bantu UMKM & startup membuat website profesional, cepat, dan siap pakai untuk meningkatkan kepercayaan dan penjualan.">
+  <meta name="keywords" content="jasa pembuatan website, jasa website UMKM, landing page murah, website profesional, jasa web developer">
+  <meta name="author" content="PeakWebDev">
+
+  <!-- Open Graph (biar bagus saat dishare WhatsApp/IG/FB) -->
+  <meta property="og:title" content="Jasa Pembuatan Website Profesional - PeakWebDev">
+  <meta property="og:description" content="Bikin website cepat, rapi, dan siap dipakai jualan — mulai dari 1 jutaan.">
+  <meta property="og:image" content="https://peakwebdev.vercel.app/assets/Logo/PeakWebDev-logo.png">
+  <meta property="og:url" content="https://peakwebdev.vercel.app">
+  <meta property="og:type" content="website">
   
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
   <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+  <link rel="canonical" href="https://peakwebdev.vercel.app/">
   <!-- Website Identity -->
   <link rel="icon" type="image/png" href="assets/Logo/favicon.png" />
   <link rel="apple-touch-icon" href="assets/Logo/favicon.png" />
   <meta property="og:image" content="assets/Logo/PeakWebDev-logo.png" />
   <meta name="theme-color" content="#1E3A8A" />
-
+  <!-- Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-564VTHW2MB"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-564VTHW2MB');
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "url": "https://peakwebdev.vercel.app/",
+    "name": "PeakWebDev",
+    "description": "Jasa pembuatan website profesional untuk UMKM dan startup digital.",
+    "publisher": {
+      "@type": "Organization",
+      "name": "PeakWebDev"
+    }
+  }
+  </script>
 </head>
 
 <body>
-  <!-- Navbar -->
-  <nav class="navbar">
-    <div class="container navbar-content">
-        <div class="logo">
-        <a href="#hero" class="logo-link">
-        <img src="assets/Logo/PeakWebDev-logo.png" alt="PeakWebDev Logo" class="site-logo" />
-        </a>
-      </div>
+  <header class="navbar">
+    <div class="nav-container">
 
-      <div class="nav-menu">
+      <!-- Logo -->
+      <a href="#hero" class="nav-logo">
+        <img src="assets/Logo/PeakWebDev-logo.png" alt="PeakWebDev" />
+      </a>
+
+      <!-- Menu -->
+      <nav class="nav-menu">
+        <a href="#hero" class="nav-link">Home</a>
+        <a href="#why-website" class="nav-link">Layanan</a>
+        <a href="#portfolio" class="nav-link">Portfolio</a>
         <a href="#pricing" class="nav-link">Harga</a>
-        <a href="#order-form" class="nav-link">Kontak</a>
-        <a href="#order-form" class="btn btn-primary">Mulai Order</a>
-      </div>
-      
-      <button class="mobile-menu-btn" id="mobileMenuBtn">
-        <svg class="menu-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-          <line x1="3" y1="12" x2="21" y2="12"></line>
-          <line x1="3" y1="6" x2="21" y2="6"></line>
-          <line x1="3" y1="18" x2="21" y2="18"></line>
-        </svg>
-        <svg class="close-icon hidden" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-          <line x1="18" y1="6" x2="6" y2="18"></line>
-          <line x1="6" y1="6" x2="18" y2="18"></line>
-        </svg>
-      </button>
-    </div>
-    
-    <div class="mobile-menu hidden" id="mobileMenu">
-      <a href="#pricing" class="mobile-link">Harga</a>
-      <a href="#order-form" class="mobile-link">Kontak</a>
-      <a href="#order-form" class="btn btn-primary btn-full">Mulai Order</a>
-    </div>
-  </nav>
+      </nav>
 
-  <main class="main-content">
-  
+      <!-- CTA -->
+      <a href="#order" class="nav-cta">Mulai Order</a>
+
+      <!-- Mobile Menu Button -->
+      <button id="navToggle" class="nav-toggle">
+        <span></span><span></span><span></span>
+      </button>
+
+      </div>
+
+      <!-- Mobile Menu -->
+      <div id="mobileMenu" class="mobile-menu">
+        <a href="#hero">Home</a>
+        <a href="#why-website">Layanan</a>
+        <a href="#portfolio">Portfolio</a>
+        <a href="#pricing">Harga</a>
+        <a href="#order" class="nav-cta mobile-cta">Mulai Order</a>
+      </div>
+    </header>
+
     <!-- Hero Section -->
     <section class="hero-section" id="hero" data-aos="fade-up" data-aos-duration="1000">
       <div class="hero-overlay"></div>
@@ -85,77 +114,62 @@
       </div>
     </section>
 
-    <!-- Benefit Section-->
+    <!--Benefit Section-->
     <section class="benefits-section py-20 bg-white" id="why-website">
-      <div class="container mx-auto px-6 text-center">
-        
-        <h2 class="text-4xl font-bold text-blue-900 mb-6" data-aos="fade-up">
-          Mengapa Bisnis Anda Wajib Punya Website Profesional?
-        </h2>
-
-        <p class="text-lg text-gray-600 mb-12 max-w-2xl mx-auto" data-aos="fade-up" data-aos-delay="150">
+      <div class="container" style="max-width:1100px; margin:0 auto; padding: 0 24px;">
+        <h2 class="section-title" data-aos="fade-up">Mengapa Bisnis Anda Wajib Punya Website Profesional?</h2>
+        <p class="section-sub" data-aos="fade-up" data-aos-delay="120">
           Website adalah fondasi utama marketing di era digital—menarik, meyakinkan, dan mengubah pengunjung menjadi pelanggan.
         </p>
 
-        <div class="grid md:grid-cols-3 gap-12 mt-10">
+        <div class="benefits-list">
 
-          <!-- Kepercayaan -->
-          <div class="benefit-card p-8 bg-gray-50 rounded-2xl shadow-sm" 
-              data-aos="zoom-in" data-aos-delay="100">
-            
-            <div class="mb-6 flex justify-center">
+          <div class="benefit-item" data-aos="fade-right" data-aos-delay="140">
+            <div class="benefit-icon" aria-hidden="true">
               <!-- ICON TRUST -->
-              <svg width="58" height="58" viewBox="0 0 24 24" fill="none" stroke="#1E3A8A" stroke-width="2">
+              <svg width="60" height="60" viewBox="0 0 24 24" fill="none" stroke="#1E3A8A" stroke-width="1.8">
                 <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
-                <path d="M9 12l2 2 4-4" stroke="#FF7F11"/>
+                <path d="M9 12l2 2 4-4" stroke="#FF7F11" stroke-width="1.8"/>
               </svg>
             </div>
-
-            <h3 class="font-semibold text-2xl text-blue-900 mb-3">Meningkatkan Kepercayaan</h3>
-            <p class="text-gray-600">
-              Website profesional membuat bisnis terlihat kredibel dan meyakinkan di mata pelanggan baru.
-            </p>
+            <div class="benefit-content">
+              <h3>Meningkatkan Kepercayaan</h3>
+              <p>Website profesional membuat bisnis terlihat kredibel dan meyakinkan di mata pelanggan baru.</p>
+            </div>
           </div>
 
-          <!-- Visibility -->
-          <div class="benefit-card p-8 bg-gray-50 rounded-2xl shadow-sm"
-              data-aos="zoom-in" data-aos-delay="200">
-
-            <div class="mb-6 flex justify-center">
+          <div class="benefit-item" data-aos="fade-right" data-aos-delay="200">
+            <div class="benefit-icon" aria-hidden="true">
               <!-- ICON VISIBILITY -->
-              <svg width="58" height="58" viewBox="0 0 24 24" fill="none" stroke="#1E3A8A" stroke-width="2">
-                <circle cx="12" cy="12" r="3" stroke="#FF7F11"></circle>
+              <svg width="60" height="60" viewBox="0 0 24 24" fill="none" stroke="#1E3A8A" stroke-width="1.8">
+                <circle cx="12" cy="12" r="3" stroke="#FF7F11" stroke-width="1.6"></circle>
                 <path d="M2 12s4-7 10-7 10 7 10 7-4 7-10 7S2 12 2 12z"></path>
               </svg>
             </div>
-
-            <h3 class="font-semibold text-2xl text-blue-900 mb-3">Ditemukan 24/7</h3>
-            <p class="text-gray-600">
-              Website menjaga bisnis Anda tetap terlihat di Google dan dapat diakses kapan pun.
-            </p>
+            <div class="benefit-content">
+              <h3>Ditemukan 24/7</h3>
+              <p>Website menjaga bisnis Anda tetap terlihat di Google dan dapat diakses kapan pun.</p>
+            </div>
           </div>
 
-          <!-- Automation -->
-          <div class="benefit-card p-8 bg-gray-50 rounded-2xl shadow-sm"
-              data-aos="zoom-in" data-aos-delay="300">
-
-            <div class="mb-6 flex justify-center">
+          <div class="benefit-item" data-aos="fade-right" data-aos-delay="260">
+            <div class="benefit-icon" aria-hidden="true">
               <!-- ICON AUTOMATION -->
-              <svg width="58" height="58" viewBox="0 0 24 24" fill="none" stroke="#1E3A8A" stroke-width="2">
-                <circle cx="12" cy="12" r="3" stroke="#FF7F11"></circle>
+              <svg width="60" height="60" viewBox="0 0 24 24" fill="none" stroke="#1E3A8A" stroke-width="1.8">
+                <circle cx="12" cy="12" r="3" stroke="#FF7F11" stroke-width="1.6"></circle>
                 <path d="M19.4 15A7.96 7.96 0 0021 12a7.96 7.96 0 00-1.6-3M4.6 9A7.96 7.96 0 003 12c0 1.1.2 2.1.6 3m2.1 3.3A8 8 0 0012 20a8 8 0 005.3-1.7M6.7 5.7A8 8 0 0112 4c1.6 0 3.1.5 4.3 1.3"/>
               </svg>
             </div>
-
-            <h3 class="font-semibold text-2xl text-blue-900 mb-3">Marketing Otomatis</h3>
-            <p class="text-gray-600">
-              Website bekerja kapan pun—menyampaikan informasi, mempromosikan produk, dan mendorong aksi.
-            </p>
+            <div class="benefit-content">
+              <h3>Marketing Otomatis</h3>
+              <p>Website bekerja kapan pun—menyampaikan informasi, mempromosikan produk, dan mendorong aksi.</p>
+            </div>
           </div>
 
         </div>
       </div>
     </section>
+
 
     <!-- Features Section -->
     <section class="features-section">
@@ -323,97 +337,97 @@
     </section>
 
     <!-- Portfolio Section -->
-<section class="portfolio-section" id="portfolioSection">
-  <div class="container">
-    <h2 class="section-title" data-aos="fade-up">Beberapa Website yang Pernah Kami Buat</h2>
-    <p class="section-subtitle" data-aos="fade-up" data-aos-delay="100">
-      Lihat hasil karya kami untuk berbagai jenis bisnis
-    </p>
+    <section class="portfolio-section" id="portfolio">
+      <div class="container">
+        <h2 class="section-title" data-aos="fade-up">Beberapa Website yang Pernah Kami Buat</h2>
+        <p class="section-subtitle" data-aos="fade-up" data-aos-delay="100">
+          Lihat hasil karya kami untuk berbagai jenis bisnis
+        </p>
 
-    <div class="portfolio-carousel" aria-hidden="false">
-      <div class="portfolio-track" role="list">
-        <!-- Card template: duplicate / edit sesuai kebutuhan -->
-        <div class="portfolio-card" role="listitem">
-          <div class="portfolio-image">
-            <img src="assets\img\fashion.png" alt="Toko Online Fashion" loading="lazy">
-            <div class="portfolio-overlay">
-              <button class="portfolio-link" data-title="Toko Online Fashion" data-image="assets\img\fashion.png">Lihat Demo</button>
+        <div class="portfolio-carousel" aria-hidden="false">
+          <div class="portfolio-track" role="list">
+            <!-- Card template: duplicate / edit sesuai kebutuhan -->
+            <div class="portfolio-card" role="listitem">
+              <div class="portfolio-image">
+                <img src="assets\img\fashion.png" alt="Toko Online Fashion" loading="lazy">
+                <div class="portfolio-overlay">
+                  <button class="portfolio-link" data-title="Toko Online Fashion" data-image="assets\img\fashion.png">Lihat Demo</button>
+                </div>
+              </div>
+              <div class="portfolio-content">
+                <h3 class="portfolio-title">Toko Online Fashion</h3>
+                <p class="portfolio-description">Website e-commerce lengkap dengan katalog produk dan integrasi marketplace.</p>
+              </div>
             </div>
-          </div>
-          <div class="portfolio-content">
-            <h3 class="portfolio-title">Toko Online Fashion</h3>
-            <p class="portfolio-description">Website e-commerce lengkap dengan katalog produk dan integrasi marketplace.</p>
-          </div>
-        </div>
 
-        <div class="portfolio-card" role="listitem">
-          <div class="portfolio-image">
-            <img src="assets\img\company profile.png" alt="Company Profile IT" loading="lazy">
-            <div class="portfolio-overlay">
-              <button class="portfolio-link" data-title="Company Profile IT" data-image="assets\img\company profile.png">Lihat Demo</button>
+            <div class="portfolio-card" role="listitem">
+              <div class="portfolio-image">
+                <img src="assets\img\company profile.png" alt="Company Profile IT" loading="lazy">
+                <div class="portfolio-overlay">
+                  <button class="portfolio-link" data-title="Company Profile IT" data-image="assets\img\company profile.png">Lihat Demo</button>
+                </div>
+              </div>
+              <div class="portfolio-content">
+                <h3 class="portfolio-title">Company Profile IT</h3>
+                <p class="portfolio-description">Website profesional dengan portofolio dan sistem kontak terintegrasi.</p>
+              </div>
             </div>
-          </div>
-          <div class="portfolio-content">
-            <h3 class="portfolio-title">Company Profile IT</h3>
-            <p class="portfolio-description">Website profesional dengan portofolio dan sistem kontak terintegrasi.</p>
-          </div>
-        </div>
 
-        <div class="portfolio-card" role="listitem">
-          <div class="portfolio-image">
-            <img src="assets\img\food.png" alt="Website Kafe & Restoran" loading="lazy">
-            <div class="portfolio-overlay">
-              <button class="portfolio-link" data-title="Website Kafe & Restoran" data-image="assets\img\food.png">Lihat Demo</button>
+            <div class="portfolio-card" role="listitem">
+              <div class="portfolio-image">
+                <img src="assets\img\food.png" alt="Website Kafe & Restoran" loading="lazy">
+                <div class="portfolio-overlay">
+                  <button class="portfolio-link" data-title="Website Kafe & Restoran" data-image="assets\img\food.png">Lihat Demo</button>
+                </div>
+              </div>
+              <div class="portfolio-content">
+                <h3 class="portfolio-title">Website Kafe & Restoran</h3>
+                <p class="portfolio-description">Landing page menarik dengan menu digital dan tombol reservasi WhatsApp.</p>
+              </div>
             </div>
-          </div>
-          <div class="portfolio-content">
-            <h3 class="portfolio-title">Website Kafe & Restoran</h3>
-            <p class="portfolio-description">Landing page menarik dengan menu digital dan tombol reservasi WhatsApp.</p>
-          </div>
-        </div>
 
-        <div class="portfolio-card" role="listitem">
-          <div class="portfolio-image">
-            <img src="assets\img\property.png" alt="Website Properti" loading="lazy">
-            <div class="portfolio-overlay">
-              <button class="portfolio-link" data-title="Website Properti" data-image="assets\img\property.png">Lihat Demo</button>
+            <div class="portfolio-card" role="listitem">
+              <div class="portfolio-image">
+                <img src="assets\img\property.png" alt="Website Properti" loading="lazy">
+                <div class="portfolio-overlay">
+                  <button class="portfolio-link" data-title="Website Properti" data-image="assets\img\property.png">Lihat Demo</button>
+                </div>
+              </div>
+              <div class="portfolio-content">
+                <h3 class="portfolio-title">Website Properti</h3>
+                <p class="portfolio-description">Website properti modern dengan galeri foto interaktif dan fitur pemesanan cepat.</p>
+              </div>
             </div>
-          </div>
-          <div class="portfolio-content">
-            <h3 class="portfolio-title">Website Properti</h3>
-            <p class="portfolio-description">Website properti modern dengan galeri foto interaktif dan fitur pemesanan cepat.</p>
-          </div>
-        </div>
 
-        <div class="portfolio-card" role="listitem">
-          <div class="portfolio-image">
-            <img src="assets\img\landing page.png" alt="Landing Page Startup" loading="lazy">
-            <div class="portfolio-overlay">
-              <button class="portfolio-link" data-title="Landing Page Startup" data-image="assets\img\landing page.png">Lihat Demo</button>
+            <div class="portfolio-card" role="listitem">
+              <div class="portfolio-image">
+                <img src="assets\img\landing page.png" alt="Landing Page Startup" loading="lazy">
+                <div class="portfolio-overlay">
+                  <button class="portfolio-link" data-title="Landing Page Startup" data-image="assets\img\landing page.png">Lihat Demo</button>
+                </div>
+              </div>
+              <div class="portfolio-content">
+                <h3 class="portfolio-title">Landing Page Startup</h3>
+                <p class="portfolio-description">Desain modern dengan CTA kuat dan animasi halus untuk menarik klien potensial.</p>
+              </div>
             </div>
-          </div>
-          <div class="portfolio-content">
-            <h3 class="portfolio-title">Landing Page Startup</h3>
-            <p class="portfolio-description">Desain modern dengan CTA kuat dan animasi halus untuk menarik klien potensial.</p>
           </div>
         </div>
       </div>
-    </div>
-  </div>
 
-  <!-- Modal Preview -->
-  <div id="demoModal" class="demo-modal hidden" aria-hidden="true" role="dialog" aria-label="Preview Demo">
-    <div class="demo-overlay" data-close></div>
-    <div class="demo-content" role="document">
-      <button id="closeDemoModal" aria-label="Tutup preview">&times;</button>
-      <h3 id="demoTitle"></h3>
-      <img id="demoImage" src="" alt="Preview Demo">
-      <div style="text-align:center;margin-top:.5rem">
-        <button id="orderSimilar" class="btn btn-primary">Order Website Sejenis</button>
+      <!-- Modal Preview -->
+      <div id="demoModal" class="demo-modal hidden" aria-hidden="true" role="dialog" aria-label="Preview Demo">
+        <div class="demo-overlay" data-close></div>
+        <div class="demo-content" role="document">
+          <button id="closeDemoModal" aria-label="Tutup preview">&times;</button>
+          <h3 id="demoTitle"></h3>
+          <img id="demoImage" src="" alt="Preview Demo">
+          <div style="text-align:center;margin-top:.5rem">
+            <button id="orderSimilar" class="btn btn-primary">Order Website Sejenis</button>
+          </div>
+        </div>
       </div>
-    </div>
-  </div>
-</section>
+    </section>
 
 
 
@@ -558,7 +572,7 @@
     </section>
 
     <!-- Order Form Section -->
-    <section class="order-section" id="order-form" data-aos="fade-up">
+    <section class="order-section" id="order" data-aos="fade-up">
       <div class="container">
         <h2 class="section-title">Mulai Pembuatan Website Anda</h2>
         <p class="section-subtitle">Isi form di bawah dan tim kami akan segera menghubungi Anda</p>

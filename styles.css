@@ -80,140 +80,118 @@ body {
   width: 100%;
 }
 
-/* Navbar - FIXED */
+/* ---------- PREMIUM NAVBAR ---------- */
 .navbar {
-  position: fixed;
-  top: 0;
   width: 100%;
-  backdrop-filter: blur(12px);
-  background-color: rgba(255, 255, 255, 0.85);
-  transition: background-color 0.3s ease, box-shadow 0.3s ease;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
-  border-bottom: 1px solid #e2e8f0;
-  z-index: 1000;
-  height: 70px;
+  background: #f8fbff;
+  border-bottom: 1px solid rgba(0,0,0,0.05);
+  position: sticky;
+  top: 0;
+  z-index: 999;
 }
 
-.navbar-content {
+.nav-container {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 14px 28px;
   display: flex;
+  align-items: center;
   justify-content: space-between;
-  align-items: center;
-  padding: 1rem;
-  height: 70px;
 }
 
-.navbar.scrolled {
-  background-color: rgba(255, 255, 255, 0.95);
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+/* Logo */
+.nav-logo img {
+  height: 46px;
+  width: auto;
+  display: block;
 }
 
-/* === Navbar Logo Fix (Final Version) === */
-.logo {
+/* Menu (desktop) */
+.nav-menu {
   display: flex;
   align-items: center;
-  justify-content: start;
-  padding: 0.25rem 1rem; /* jarak kiri-kanan */
-}
-
-.site-logo {
-  height: 70px;       /* ubah ini sesuai selera: 60–80px biasanya pas */
-  width: auto;        /* biar proporsional */
-  display: block;
-  object-fit: contain;
-  cursor: pointer;
-  transition: transform 0.25s ease;
-}
-
-.site-logo:hover {
-  transform: scale(1.05);
-}
-
-/* Responsif di layar kecil */
-@media (max-width: 768px) {
-  .site-logo {
-    height: 60px; /* sedikit lebih kecil untuk HP */
-  }
-
-  .navbar-content {
-    padding: 0.5rem 1rem;
-  }
-}
-
-.navbar-content {
-  padding: 0.75rem 1.5rem; /* kasih jarak kiri-kanan sedikit */
-}
-
-.nav-menu {
-  display: none;
-  align-items: center;
-  gap: 2rem;
+  gap: 36px;
 }
 
 .nav-link {
-  color: #0f172a;
-  text-decoration: none;
+  font-size: 1rem;
+  color: #172b4d;
   font-weight: 500;
-  transition: color 0.3s ease;
+  transition: 0.2s ease;
 }
 
 .nav-link:hover {
-  color: #1E3A8A;
+  color: #ff7f11;
 }
 
-.nav-link, .btn {
-  transition: all 0.2s ease;
+.nav-link,
+.nav-menu a {
+  text-decoration: none !important;
 }
 
-.mobile-menu-btn {
-  display: block;
+/* CTA Button */
+.nav-cta {
+  background: #ff7f11;
+  padding: 10px 22px;
+  color: white;
+  border-radius: 10px;
+  font-weight: 600;
+  transition: 0.2s ease;
+}
+
+.nav-cta:hover {
+  background: #e56c07;
+}
+
+.nav-cta {
+  text-decoration: none !important;
+}
+
+/* Mobile toggle */
+.nav-toggle {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
   background: none;
   border: none;
   cursor: pointer;
-  color: #0f172a;
-  padding: 0.5rem;
 }
 
+.nav-toggle span {
+  width: 28px;
+  height: 3px;
+  background: #172b4d;
+  border-radius: 4px;
+}
+
+/* Mobile menu */
 .mobile-menu {
-  position: absolute;
-  top: 100%;
-  left: 0;
-  width: 100%;
-  background: white;
-  border-top: 1px solid #e2e8f0;
-  padding: 1rem;
   display: none;
   flex-direction: column;
-  gap: 1rem;
+  background: white;
+  border-top: 1px solid #eee;
+  padding: 20px 0;
 }
 
-.mobile-menu.active {
-  display: flex;
+.mobile-menu a {
+  padding: 14px 26px;
+  font-size: 18px;
+  border-bottom: 1px solid rgba(0,0,0,0.05);
+  color: #172b4d;
 }
 
-.mobile-link {
-  display: block;
-  color: #0f172a;
-  text-decoration: none;
-  font-weight: 500;
-  padding: 0.5rem 0;
-  transition: color 0.3s ease;
+.mobile-menu .mobile-cta {
+  margin-top: 12px;
+  text-align: center;
 }
 
-.mobile-link:hover {
-  color: #1E3A8A;
-}
-
-@media (min-width: 768px) {
+/* Responsive */
+@media (max-width: 850px) {
   .nav-menu {
-    display: flex;
-  }
-  
-  .mobile-menu-btn {
     display: none;
   }
-  
-  .mobile-menu {
-    display: none !important;
+  .nav-toggle {
+    display: flex;
   }
 }
 
@@ -304,13 +282,67 @@ section {
 }
 
 /* Benefit Section */
-.benefits-section .benefit-card {
-  transition: transform .25s ease, box-shadow .25s ease;
+/* Benefits horizontal items */
+.benefits-section { padding-top: 3.25rem; padding-bottom: 3.25rem; }
+.section-title { font-size: 32px; color: #13284B; font-weight:700; margin-bottom:8px; }
+.section-sub { color: #5b6b7a; max-width:820px; margin: 0 auto 28px; }
+
+/* List container */
+.benefits-list {
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
+  margin-top: 18px;
 }
 
-.benefits-section .benefit-card:hover {
-  transform: translateY(-6px);
-  box-shadow: 0 12px 24px rgba(0,0,0,0.08);
+/* Each item: icon left, text right */
+.benefit-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 18px;
+  padding: 18px;
+  background: transparent; /* or use bg if you prefer */
+  border-radius: 10px;
+  box-shadow: 0 6px 18px rgba(16,24,40,0.04);
+  transition: opacity .2s ease; /* aman */
+}
+
+.benefit-icon {
+  flex: 0 0 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* make svg crisp and exactly sized */
+.benefit-icon svg { width: 56px; height: 56px; display:block; }
+
+/* Text column */
+.benefit-content { flex: 1 1 auto; }
+.benefit-content h3 {
+  margin: 0 0 6px 0;
+  font-size: 20px;
+  color: #13284B;
+  font-weight: 700;
+}
+.benefit-content p {
+  margin: 0;
+  color: #5b6b7a;
+  line-height: 1.6;
+}
+
+/* Responsive rules: on very small screens we allow smaller gap and icon */
+@media (max-width: 600px) {
+  .benefit-item { gap: 12px; padding: 14px 8px; }
+  .benefit-icon { flex-basis: 48px; }
+  .benefit-icon svg { width: 44px; height: 44px; }
+  .section-title { font-size: 24px; text-align: left; }
+  .section-sub { font-size: 14px; text-align: left; margin-bottom: 20px; }
+}
+
+/* If you prefer card-like boxes on desktop, uncomment below */
+@media (min-width: 900px) {
+  .benefit-item { background: #fbfcff; box-shadow: 0 8px 20px rgba(16,24,40,0.04); }
 }
 
 /* Features Section */
@@ -597,17 +629,6 @@ section {
 .order-section p {
   color: #ffffff;
   text-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
-}
-
-[data-aos="fade-up"] {
-  opacity: 0;
-  transform: translateY(30px);
-  transition: all 1s ease;
-}
-
-[data-aos="fade-up"].aos-animate {
-  opacity: 1;
-  transform: translateY(0);
 }
 
 /* Color input specific styling */
@@ -1173,3 +1194,13 @@ input[type="color"] {
   }
 }
 
+/* RESET AOS to default baseline */
+[data-aos] {
+  opacity: 0;
+  transition-property: opacity, transform;
+}
+
+[data-aos].aos-animate {
+  opacity: 1;
+  transform: none;
+}
