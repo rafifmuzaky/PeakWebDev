@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
@@ -5,3 +6,12 @@
     <priority>1.00</priority>
   </url>
 </urlset>
+=======
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url>
+    <loc>https://peakwebdev.vercel.app/</loc>
+    <priority>1.00</priority>
+  </url>
+</urlset>
+>>>>>>> ff7b7f9d3d6ee749384ae5fafd4880f81da0675a
