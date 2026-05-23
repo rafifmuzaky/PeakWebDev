@@ -160,15 +160,3 @@ Proyek ini bebas digunakan untuk kebutuhan pribadi dan portfolio.
 Landing page builder untuk UMKM & startup digital.
 
 ```
-
----
-
-Kalau kamu mau, gue bisa:
-
-✅ bikin **README versi English**  
-✅ tambahin **screenshots preview**  
-✅ tambahin **status badges GitHub** (deploy, views, dll)  
-✅ bikin **demo GIF** biar makin profesional  
-
-Tinggal bilang.
-```
